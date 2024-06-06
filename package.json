@@ -1,0 +1,24 @@
+{
+  "name": "iot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "broker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aedes": "^0.51.1",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "mqtt": "^5.7.0",
+    "net": "^1.0.2"
+  },
+  "devDependencies": {
+    "vite": "^5.2.12"
+  }
+}

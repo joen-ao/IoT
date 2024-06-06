@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="navbar">
+        <p class="navbarTitle">Proyecto final</p>
+    </div>
+  <div id="container">
+    <div id="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+    <div id="switch-container">
+      <p>Switch</p>
+      <label id="switch" class="switch">
+        <input type="checkbox">
+        <span id="slider" class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Scripts JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <script src="client.js"></script>
+  <script>
+    // Simular datos para la gráfica (reemplazar con los datos reales obtenidos de client.js)
+    const data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [{
+        label: 'Porcentaje humedad del suelo',
+        data: [10, 9, 8, 9, 6, 9, 4],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+
+    // Configuración de la gráfica
+    const config = {
+      type: 'line',
+      data: data,
+    };
+
+    // Inicializar la gráfica
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    // Función para cambiar el estado del botón de tipo switch
+    function toggleSwitch() {
+      const checkbox = document.querySelector('input[type="checkbox"]');
+      if (checkbox.checked) {
+        // Si está marcado, hacer algo
+        console.log('Switch activado');
+      } else {
+        // Si no está marcado, hacer otra cosa
+        console.log('Switch desactivado');
+      }
+    }
+
+    // Asignar evento de cambio al botón de tipo switch
+    document.querySelector('input[type="checkbox"]').addEventListener('change', toggleSwitch);
+  </script>
+</body>
+</html>

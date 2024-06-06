@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el contenedor principal */
+#container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px; /* Agregamos un relleno para separar el contenido del borde */
+}
+
+/* Estilos para el contenedor de la gráfica */
+#chart-container {
+  flex: 1;
+  margin-right: 20px;
+  height: 300px; /* Tamaño de la gráfica */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Agregamos una sombra */
+}
+
+/* Estilos para el contenedor del switch */
+#switch-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 300px; /* Tamaño del switch */
+  width: 10vh;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Agregamos una sombra */
+}
+
+/* Estilos para el switch */
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 60px; /* Ajustamos el tamaño del switch */
+  background-color: #ccc;
+  border-radius: 30px; /* Hacemos el botón redondo */
+  overflow: hidden; /* Ocultamos el deslizador que sobresale */
+}
+
+#switch input {
+  display: none; /* Ocultamos el input */
+}
+
+#slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c2bebe; /* Cambiamos el color del switch */
+  border-radius: 30px; /* Hacemos el botón de tipo switch redondo */
+  transition: 0.4s; /* Agregamos una transición suave */
+}
+
+#slider:before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background-color: #ffffff;
+  border-radius: 50%; /* Hacemos el botón redondo */
+  left: 5px;
+  bottom: 4px;
+  transition: 0.4s; /* Agregamos una transición suave */
+}
+
+input:checked + #slider {
+  background-color: #2196f3; /* Cambiamos el color del switch cuando está activado */
+}
+
+input:checked + #slider:before {
+  transform: translateX(59px); /* Movemos el botón cuando está activo */
+  background-color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+  justify-content: flex-end;
+  background-color: #114d7e;
+}
+.navbarTitle {
+  font-size: 34px;
+  font-weight: "bold";
+  flex: 1;
+  color: #ffffff;
+  margin: 10px;
+}
